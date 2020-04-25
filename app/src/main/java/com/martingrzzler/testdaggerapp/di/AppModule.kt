@@ -15,7 +15,6 @@ import javax.inject.Singleton
 object AppModule {
 
     @JvmStatic
-    @Singleton
     @Provides
     fun provideApiService(retrofitBuilder: Retrofit.Builder): ApiService {
         return retrofitBuilder
@@ -25,7 +24,6 @@ object AppModule {
 
 
     @JvmStatic
-    @Singleton
     @Provides
     fun provideMainRepository(apiService: ApiService): MainRepository {
         return MainRepositoryImpl(apiService)
